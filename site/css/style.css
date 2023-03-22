@@ -38,3 +38,8 @@
     height: 40%;
     object-fit: contain;
 }
+
+.ingredientenList {
+    display: flex;
+    flex-direction: column;
+}
