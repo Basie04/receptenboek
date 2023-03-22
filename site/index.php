@@ -1,40 +1,4 @@
 <?php
-require "database.php";
-
-$stmt = $conn->prepare("SELECT * FROM recept");
-$stmt->execute();
-
-$all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beschikbare recepten</title>
-</head>
-
-<body>
-    <table border="2"> <!-- table niet toegestaan later veranderen naar fex of grid met afbeelding -->
-        <thead>
-            <th>recept naam</th>
-            <th>afbeelding</th>
-        </thead>
-
-        <?php foreach ($all_recepten as $recept) { ?>
-            <tr>
-                <td><a href="<?php echo "recept.php?id=" . $recept['id'] ?>"><?php echo $recept['titel'] ?></a></td>
-                <td><?php echo $recept['foto_path'] ?></td>
-            </tr>
-
-
-        <?php } ?>
-    </table>
-</body>
-
-</html>
+header('Location: recepten.php');
+die();
+//redirect naar recepten recepten pagina (hoofdpagina)

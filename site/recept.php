@@ -31,17 +31,24 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <h1><?php echo $recept['titel']; ?></h1>
+    <div class="receptTitelDiv">
+        <h1><?php echo $recept['titel']; ?></h1>
+        <span><?php echo "Berijdingstijd: " . $recept['duur_in_minuten'] . " minuten"; ?></span>
+    </div>
 
-    <div><?php echo $recept['foto_path']; ?></div> <!-- hier komt een image-->
+    <div class="receptAfbeelding">
+        <img src="<?php echo $recept['foto_path']; ?>" alt="<?php echo $recept['titel']; ?>">
+    </div>
+
 
     <h3>ingredienten</h3>
     <p class="ingredientenList">
         <?php foreach ($ingredienten as $ingredient) { ?>
 
-            <span><?php echo $ingredient['ingredientNaam'] ." ".$ingredient['hoeveelheid']; ?></span>
+            <span><?php echo $ingredient['ingredientNaam'] . " " . $ingredient['hoeveelheid']; ?></span>
 
         <?php } ?>
+        <span class="receptInstructies"><?php echo $recept['instructies']; ?></span>
     </p>
 </body>
 
