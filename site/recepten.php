@@ -2,6 +2,7 @@
 require "database.php";
 require "navbar.php";
 
+
 $stmt = $conn->prepare("SELECT * FROM recept");
 $stmt->execute();
 
@@ -23,22 +24,17 @@ $all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="backgroundGradientDiv"></div>
-    <div class="page-contents">
-        <table border="2"> <!-- table niet toegestaan later veranderen naar fex of grid met afbeelding -->
-            <thead>
-                <th>recept naam</th>
-                <th>afbeelding</th>
-            </thead>
-
+    <div class="page-contents inline-block center-recepten-grid">
+        <div class="recepten-grid-container">
             <?php foreach ($all_recepten as $recept) { ?>
-                <tr>
-                    <td><a href="<?php echo "recept.php?id=" . $recept['id'] ?>"><?php echo $recept['titel'] ?></a></td>
-                    <td><?php echo $recept['foto_path'] ?></td>
-                </tr>
 
+                <div class="recepten-grid-text"><?php echo $recept['titel']; ?></div>
+                <div class="recepten-grid-picture"><img src="<?php echo $recept['foto_path'] ?>" alt="<?php echo $recept['foto_path'] ?>"></div>
 
             <?php } ?>
-        </table>
+
+
+        </div>
     </div>
 </body>
 
