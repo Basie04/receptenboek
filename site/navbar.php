@@ -9,12 +9,12 @@
 </head>
 <body>
     <nav class="globalNavbar">
-        <a href="">home</a>
-        <a href="">recepten</a>
-        <a href="">specialitijten</a>
-        <a href="">ingredienten</a>
-        <a href="">inloggen</a>
-        <a href="">registreren</a>
+        <a href="">Home</a>
+        <a href="">Recepten</a>
+        <a href="">Specialitijten</a>
+        <a href="">Ingredienten</a>
+        <a href="">Inloggen</a>
+        <a href="">Registreren</a>
     </nav>
     
 </body>
