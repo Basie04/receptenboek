@@ -1,5 +1,8 @@
 <?php
 require 'database.php';
+require 'navbar.php';
+
+//toevoegen test of result een bool is
 
 $stmt = $conn->prepare("SELECT * FROM recept where id = :id");
 $stmt->bindParam(':id', $_GET['id']);

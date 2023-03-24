@@ -28,7 +28,7 @@ $all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="recepten-grid-container">
             <?php foreach ($all_recepten as $recept) { ?>
 
-                <div class="recepten-grid-text"><?php echo $recept['titel']; ?></div>
+                <div class="recepten-grid-text"><a href="<?php echo "recept.php?id=". $recept['id']; ?>"><?php echo $recept['titel']; ?></a></div>
                 <div class="recepten-grid-picture"><img src="<?php echo $recept['foto_path'] ?>" alt="<?php echo $recept['foto_path'] ?>"></div>
 
             <?php } ?>

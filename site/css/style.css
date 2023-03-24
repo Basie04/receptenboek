@@ -53,19 +53,26 @@
     background-blend-mode: overlay;
 }
 
+.recepten-grid-text a {
+    text-decoration: underline;
+    color: white;
+    font-size: 20px;
+}
+
 .recepten-grid-picture {
     align-items: center;
     object-fit: cover;
     max-width: 100%;
     width: 100%;
-    
-
+    display: flex;
+    align-items: center;
 }
 
 .recepten-grid-picture img {
 
     max-width: 100%;
     width: 100%;
+    margin: 0 auto;
 }
 
 .receptAfbeelding {
@@ -187,6 +194,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
+    background-attachment: fixed;
 
 }
 
@@ -199,7 +207,8 @@ table a {
 }
 
 .backgroundGradientDiv {
-    position: absolute;
+    position: fixed;
+    /* changed from absolute */
     top: 0;
     left: 0;
     width: 100%;
@@ -207,8 +216,8 @@ table a {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
     z-index: -1;
     background-blend-mode: overlay;
-
-
+    background-attachment: fixed;
+    /* Add this line */
 }
 
 .page-contents {
