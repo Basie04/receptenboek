@@ -1,6 +1,12 @@
 <?php
+
 require "database.php";
-require "navbar.php";
+require "glob_check_func.php";
+session_start();
+
+if (userdata_not_empty()) {
+    //laat iets zien
+}
 
 
 $stmt = $conn->prepare("SELECT * FROM recept");
@@ -8,6 +14,7 @@ $stmt->execute();
 
 $all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+require "navbar.php";
 ?>
 
 
@@ -24,11 +31,12 @@ $all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <div class="backgroundGradientDiv"></div>
+
     <div class="page-contents inline-block center-recepten-grid">
         <div class="recepten-grid-container">
             <?php foreach ($all_recepten as $recept) { ?>
 
-                <div class="recepten-grid-text"><a href="<?php echo "recept.php?id=". $recept['id']; ?>"><?php echo $recept['titel']; ?></a></div>
+                <div class="recepten-grid-text"><a href="<?php echo "recept.php?id=" . $recept['id']; ?>"><?php echo $recept['titel']; ?></a></div>
                 <div class="recepten-grid-picture"><img src="<?php echo $recept['foto_path'] ?>" alt="<?php echo $recept['foto_path'] ?>"></div>
 
             <?php } ?>
@@ -36,6 +44,7 @@ $all_recepten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         </div>
     </div>
+
 </body>
 
 </html>

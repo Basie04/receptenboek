@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
         <a href="">Recepten</a>
         <a href="">Specialitijten</a>
         <a href="">Ingredienten</a>
-        <a href="">Inloggen</a>
+        <a href="login.php">Inloggen</a>
         <a href="">Registreren</a>
     </nav>
     
