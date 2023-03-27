@@ -3,6 +3,8 @@
 require "database.php";
 require "glob_check_func.php";
 
+try_session_start();
+
 if (check_form_filled_out()) {
     $stmt = $conn->prepare('SELECT * FROM gebruiker WHERE email = :email AND password = :pass');
     $stmt->bindParam(':email', $_POST['email']);

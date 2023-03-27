@@ -2,11 +2,10 @@
 
 require "database.php";
 require "glob_check_func.php";
-session_start();
+try_session_start();
+echo session_exists();
+print_r($_SESSION);
 
-if (userdata_not_empty()) {
-    //laat iets zien
-}
 
 
 $stmt = $conn->prepare("SELECT * FROM recept");
