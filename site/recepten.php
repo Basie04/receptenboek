@@ -3,8 +3,7 @@
 require "database.php";
 require "glob_check_func.php";
 try_session_start();
-echo session_exists();
-print_r($_SESSION);
+
 
 
 

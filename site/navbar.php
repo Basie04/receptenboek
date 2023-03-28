@@ -18,18 +18,20 @@ if (!isset($_SESSION)) {
 
 <body>
     <nav class="globalNavbar">
-        <a href="">Home</a>
-        <a href="">Recepten</a>
+        <a href="index.php">Home</a>
         <a href="">Specialitijten</a>
         <a href="">Ingredienten</a>
         <?php
         if (isset($_SESSION["userdata"]["id"])) {
+            if($_SESSION['userdata']['rol'] == 'eigenaar' || $_SESSION['userdata']['rol'] == 'manager'){
+                echo '<a href="beheergebruikers.php">Beheer</a>';
+            }
             echo "<a href='logout.php'>Uitloggen</a>";
         } else {
             echo "<a href='login.php'>Inloggen</a>";
+            echo "<a href='registreren.php'>Registreren</a>";
         }
         ?>
-        <a href="">Registreren</a>
     </nav>
 
 </body>
