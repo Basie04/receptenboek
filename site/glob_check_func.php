@@ -31,8 +31,8 @@ function user_is_admin()
         if (
             isset($_SESSION['userdata']['id']) &&
             !empty($_SESSION['userdata']['id']) &&
-            $_SESSION['userdata']['rol'] == 'eigenaar' ||
-            $_SESSION['userdata']['rol'] == 'manager'
+            $_SESSION['userdata']['rol_naam'] == 'eigenaar' ||
+            $_SESSION['userdata']['rol_naam'] == 'manager'
         ) {
             return true;
         } else {
@@ -51,7 +51,17 @@ function restrictAccessToAdmin()
     }
 }
 
-
+function rolHasValidValue()
+{
+    if (
+        $_POST['rol'] == "1" || $_POST['rol'] == "2" ||
+        $_POST['rol'] == "3" || $_POST['rol'] == "4"
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function session_exists()
 {

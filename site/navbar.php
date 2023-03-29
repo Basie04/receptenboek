@@ -23,7 +23,7 @@ if (!isset($_SESSION)) {
         <a href="">Ingredienten</a>
         <?php
         if (isset($_SESSION["userdata"]["id"])) {
-            if($_SESSION['userdata']['rol'] == 'eigenaar' || $_SESSION['userdata']['rol'] == 'manager'){
+            if($_SESSION['userdata']['rol_naam'] == 'eigenaar' || $_SESSION['userdata']['rol_naam'] == 'manager'){
                 echo '<a href="beheergebruikers.php">Beheer</a>';
             }
             echo "<a href='logout.php'>Uitloggen</a>";

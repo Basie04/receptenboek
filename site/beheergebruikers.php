@@ -37,6 +37,10 @@ require 'navbar.php';
             <th>edit</th>
         </thead>
         <tbody>
+            <tr>
+                <td colspan="5"></td>
+                <td><a href="mkNewUser.php">create new</a></td>
+            </tr>
             <?php foreach ($allUsers as $user) { ?>
                 <tr>
                     <td><?php echo $user['id']; ?></td>
