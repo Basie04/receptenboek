@@ -85,7 +85,7 @@ table a {
     z-index: 2;
 }
 
-.globalNavbar a {
+.navGridItem {
     font-family: 'Roboto', sans-serif;
     color: #000000;
     background-color: #1a9c2d;
@@ -101,6 +101,32 @@ table a {
     width: 12%;
     border-radius: 8px;
     align-items: center;
+}
+
+.receptenCountTextItem {
+    padding: 0 auto;
+}
+
+.navReceptenCount {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background-color: #303f2b99;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 6px;
+    padding: 12px;
+    width: 5%;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border: 0;
+    flex-wrap: wrap;
+    
 }
 
 .globalNavbar a:hover {
