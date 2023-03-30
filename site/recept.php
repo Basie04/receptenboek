@@ -19,6 +19,7 @@ $stmt->execute();
 
 $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+print('hi there');
 
 ?>
 
@@ -41,6 +42,13 @@ $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <h1><?php echo $recept['titel']; ?></h1>
             <span><?php echo "Berijdingstijd: " . $recept['duur_in_minuten'] . " minuten"; ?></span>
             <span><?php echo "Moeilijkheid: " . $recept['moeilijkheid']; ?></span>
+            <?php if (isset($recept['maker']) && isset($_SESSION['userdata']['id'])) {
+                
+                if ($recept['maker'] == $_SESSION['userdata']['id']) {
+                    echo "<span><a href='editRecept.php?receptId=" . $recept['id'] . "'>edit recept</a></span>";
+                }
+            } ?>
+
         </div>
 
         <div class="receptAfbeelding">

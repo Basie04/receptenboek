@@ -6,7 +6,7 @@ require "glob_check_func.php";
 try_session_start();
 
 if (check_form_filled_out()) {
-    $stmt = $conn->prepare('SELECT * FROM gebruiker JOIN rollen ON rollen.id = gebruiker.rol WHERE email = :email AND password = :pass');
+    $stmt = $conn->prepare('SELECT * FROM gebruiker JOIN rollen ON rollen.rol_id = gebruiker.rol WHERE email = :email AND password = :pass');
     $stmt->bindParam(':email', $_POST['email']);
     $stmt->bindParam(':pass', $_POST['pass']);
     $stmt->execute();

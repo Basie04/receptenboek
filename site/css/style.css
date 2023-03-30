@@ -64,6 +64,10 @@ table a {
     text-decoration: underline;
 }
 
+span a {
+    color: white;
+    
+}
 
 
 
