@@ -38,14 +38,19 @@ if (check_form_filled_out()) {
 
     <body>
         <div class="backgroundGradientDiv"></div>
-        <div class="login_form">
+        <div class="formFlex">
             <form action="" method="post">
-                <label for="email">email</label>
-                <input type="text" name="email" id="email" required>
-                <label for="pass">wachtwoord</label>
-                <input type="password" name="pass" id="pass" required>
-                <input type="submit" value="submit" name="submit">
-
+                <div>
+                    <label for="email">email</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="pass">wachtwoord</label>
+                    <input type="password" name="pass" id="pass" required>
+                </div>
+                <div>
+                    <input type="submit" value="submit" name="submit">
+                </div>
             </form>
         </div>
 

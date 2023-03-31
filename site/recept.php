@@ -19,7 +19,6 @@ $stmt->execute();
 
 $ingredienten = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-print('hi there');
 
 ?>
 
